@@ -90,6 +90,36 @@ public:
     */
     virtual void trimToSize() = 0;
 
+    /**
+     * Returns the minimum integer in the list
+     * 
+     * @return int 
+     */
+    virtual int getMin() = 0;
+
+    /**
+     * Returns the maximum integer in the list
+     * 
+     * @return int 
+     */
+    virtual int getMax() = 0;
+
+    /**
+     * Creates a new list and copies elements from start to end index into that new list
+     * 
+     * @param startIndex 
+     * @param endIndex 
+     * @return AbstractList* 
+     */
+    virtual AbstractList* getSublist(int startIndex, int endIndex) = 0;
+
+    /**
+     *  Creates a deep copy of the list
+     *  
+     * @return AbstractList* 
+     */
+    virtual AbstractList* copy() = 0;
+
 protected:
     int currentSize;
 };

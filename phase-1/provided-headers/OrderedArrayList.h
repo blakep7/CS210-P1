@@ -25,5 +25,9 @@ public:
     bool removeAll(int data) ;
     int  size() ;
     void trimToSize() ;
+    int getMin() ;
+    int getMax() ;
+    OrderedArrayList* getSublist(int startIndex, int endIndex) ;
+    OrderedArrayList* copy() ;
 };
 #endif
