@@ -6,7 +6,7 @@
 class UnorderedArrayList : public AbstractList {
 
 private:
-    int* array;
+    Process** array;
     int capacity;
     int currentPos;
 
@@ -14,20 +14,16 @@ public:
     UnorderedArrayList();
     UnorderedArrayList(int initialCapacity) ;
 
-    bool add(int data) ;
-    bool add(int index, int data) ;
+    bool add(Process *p) ;
+    bool add(int index, Process *p) ;
     void clear() ;
-    bool contains(int data) ;
-    int  get(int index) ;
-    int  indexOf(int data) ;
+    bool contains(Process *p) ;
+    Process* get(int index) ;
+    int indexOf(Process *p) ;
     bool isEmpty() ;
-    int  remove(int index) ;
-    bool removeAll(int data) ;
-    int  size() ;
+    Process* remove(int index) ;
+    bool removeAll(Process *p) ;
+    int size() ;
     void trimToSize() ;
-    int getMin() ;
-    int getMax() ;
-    UnorderedArrayList* getSublist(int startIndex, int endIndex) ;
-    UnorderedArrayList* copy() ;
 };
 #endif

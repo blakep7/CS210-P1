@@ -6,6 +6,8 @@
  */
 #include <stdexcept>
 
+#include "Process.h"
+
 class AbstractList 
 {
 public:
@@ -15,7 +17,7 @@ public:
     * param  int  data element to insert
     * return bool 1 success
     */ 
-    virtual bool add(int) = 0;
+    virtual bool add(Process *) = 0;
  
    /** 
     * Appends the specified data to the list at the 
@@ -24,7 +26,7 @@ public:
     * @param data  element to insert
     * @return bool success
     */ 
-    virtual bool add(int index, int data) = 0;
+    virtual bool add(int index, Process *p) = 0;
 		
    /**
     * Removes all of the Objects from this list leaving
@@ -37,7 +39,7 @@ public:
     * @param data
     * @return bool 1 success
     */
-    virtual bool contains(int data) = 0;
+    virtual bool contains(Process *p) = 0;
 
    /**
     * Returns the Object at the specified position in this list
@@ -45,7 +47,7 @@ public:
     * @return Object
     * @throws invalid_argument if index out of range
     */
-    virtual int get(int index) = 0;
+    virtual Process* get(int index) = 0;
 
    /**
     * Returns the Object at the specified position in this list and
@@ -53,14 +55,14 @@ public:
     * @param index element to remove
     * @throws invalid_argument if index out of range
     */
-    virtual int remove(int index) = 0;
+    virtual Process* remove(int index) = 0;
 
    /**
     * Removes all occurences of the Object in this list 
     * @param data element(s) to remove
     * @return 1 success
     */
-    virtual bool removeAll(int data) = 0;
+    virtual bool removeAll(Process *p) = 0;
 
    /**
     * Returns the index of the first occurrence of the 
@@ -69,7 +71,7 @@ public:
     * @param data element to search for
     * @return int position of data if found, else -1
     */
-    virtual int indexOf(int data) = 0;
+    virtual int indexOf(Process *p) = 0;
 
    /**
     * Returns true if this list contains no Objects
@@ -89,36 +91,6 @@ public:
     * operation to minimize the storage of an instance.
     */
     virtual void trimToSize() = 0;
-
-    /**
-     * Returns the minimum integer in the list
-     * 
-     * @return int 
-     */
-    virtual int getMin() = 0;
-
-    /**
-     * Returns the maximum integer in the list
-     * 
-     * @return int 
-     */
-    virtual int getMax() = 0;
-
-    /**
-     * Creates a new list and copies elements from start to end index into that new list
-     * 
-     * @param startIndex 
-     * @param endIndex 
-     * @return AbstractList* 
-     */
-    virtual AbstractList* getSublist(int startIndex, int endIndex) = 0;
-
-    /**
-     *  Creates a deep copy of the list
-     *  
-     * @return AbstractList* 
-     */
-    virtual AbstractList* copy() = 0;
 
 protected:
     int currentSize;
