@@ -1,0 +1,121 @@
+% !TeX root = Phase-3-Instructions.tex
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{tocloft}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{changepage}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{datetime}
+\usepackage{geometry}
+
+% Set page margins
+\geometry{margin=1in}
+
+\newdateformat{sigdate}{\shortmonthname[\THEMONTH]. \THEDAY, \THEYEAR}
+
+\newcommand{\mysection}[1]{\section*{#1}\hrule\vspace{8pt}\addcontentsline{toc}{section}{#1}}
+
+% Define colors for syntax highlighting
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{codeblue}{rgb}{0.16,0.29,0.68}
+\definecolor{codegreen}{rgb}{0.00,0.54,0.25}
+\definecolor{codeorange}{rgb}{0.90,0.41,0.05}
+
+% Define C language settings
+\lstdefinestyle{cstyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{codeblue},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codeorange},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=4,
+    language=C,
+    emph={int,char,double,float,unsigned,void},
+    emphstyle=\color{codeorange},
+    morekeywords={alignas,alignof,asm,auto,bool,break,case,catch,char,char16_t,
+    char32_t,class,compl,const,const_cast,continue,decltype,default,delete,
+    do,double,dynamic_cast,else,enum,explicit,export,extern,false,float,
+    for,friend,goto,if,inline,int,long,mutable,namespace,new,noexcept,
+    nullptr,operator,private,protected,public,register,reinterpret_cast,
+    return,short,signed,sizeof,static,static_assert,static_cast,struct,
+    switch,template,this,thread_local,throw,true,try,typedef,typeid,
+    typename,union,unsigned,using,virtual,void,volatile,wchar_t,while},
+    escapeinside={(*@}{@*)},
+    frame=tb
+}
+
+
+
+% Cover Page
+\begin{document}
+\begin{titlepage}
+    \begin{center}
+        \includegraphics[width=0.7\textwidth]{images/SDSU.png}
+        \vspace{1cm}
+
+        \large{Department of Computer Science}\\
+        {CS 210 Data Structures}\\
+        \vspace{3cm}
+
+        \LARGE\textbf{Program 1 Phase 3}\\
+        \textbf{Instructions}\\
+
+        \vspace{5cm}
+
+    \end{center}
+\end{titlepage}
+
+%Objective
+\mysection{Student Objective}
+In this assignment, you will develop two implementations of a Priority Queue: one ordered and one unordered.
+Both implementations must adhere to specific criteria, ensuring removal operations consistently return the object
+of the highest priority that has been in the queue the longest. Additionally, the FIFO order must be maintained
+within each priority level.
+\\[2mm]
+This assignment will progress through three distinct phases. Phase 1 involves the implementation of two Array classes:
+\verb|UnorderedArrayList| and \verb|OrderedArrayList|. Following Phase 1, Phase 2 focuses on the development of a Priority Queue
+specific to each array class type. Finally, Phase 3 will entail conducting an analysis of your written code, evaluating aspects
+such as time complexity, space complexity, and overall clarity.
+\\[2mm]
+As you tackle this first program, remember it's your chance to grasp the basics of testing, finding edge cases, and mastering debugging.
+Embrace the opportunity to learn test-driven development—it's the perfect starting point for your journey in this course!
+
+
+
+\mysection{Phase 3 Instructions}
+Congratulations on completing the challenging part of the program! Now, you'll be analyzing your code, an essential aspect for continual
+improvement often demanded in industry. This analysis will take place within the Gradescope assignment for Phase 3.
+\\[4mm]
+You're tasked with uploading each of your implementations (the \verb|.cpp| files) and providing detailed explanations for various methods' time and space
+complexities. For each method, such as add(int data) or clear(), you'll need to explain their time and space complexities using Big O notation.
+Additionally, justify why the complexities are as they are and assess whether they're optimal, referencing your code as evidence.
+\\[4mm]
+Once you've covered the ordered array list complexities, you'll move on to the unordered array list complexities, followed by ordered and
+unordered priority queue complexities. Again, upload the corresponding files and provide thorough explanations for each method's time and space complexities.
+\\[4mm]
+Finally, you'll delve into real-world analysis, exploring applications where priority queues are utilized. Discuss the benefits and drawbacks
+of using priority queues in various scenarios, showcasing your understanding of their practical significance.
+
+\newpage\noindent
+\mysection{Cheating Policy}
+There is a zero tolerance policy on cheating in this course. You are expected to complete all programming assignments on your own.
+Collaboration with other students in the course is not permitted. You may discuss ideas or solutions in general terms with other students,
+but you must not exchange code. During the grading process I will examine your code carefully. Anyone caught cheating on a programming
+assignment (or on an exam) will receive an "F" in the course, and a referral to Judicial Procedures.
+
+\end{document}
