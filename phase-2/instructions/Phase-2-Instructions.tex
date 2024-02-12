@@ -72,7 +72,7 @@
         {CS 210 Data Structures}\\
         \vspace{3cm}
 
-        \LARGE\textbf{Program 1 Phase 1}\\
+        \LARGE\textbf{Program 1 Phase 2}\\
         \textbf{Instructions}\\
 
         \vspace{5cm}
@@ -98,29 +98,30 @@ Embrace the opportunity to learn test-driven development—it's the perfect star
 % %High Level Description
 % \section{High Level Description of Project}
 
-\mysection{Phase 1 Instructions}
-To begin, read \emph{Separate Compilation}. If you skip this step, you may struggle to understand how the program files work together.
+\mysection{Phase 2 Instructions}
+You should have already read \emph{Separate Compilation}. If you skip this step, you may struggle to understand how the program files work together.
 \\[2mm]
-Class prototypes defined in \verb|UnorderedArrayList.h| and \verb|OrderedArrayList.h| are provided. Both of these classes are subclasses
-of the pure virtual \verb|AbstractList| class. You \textbf{must} review \verb|AbstractList.h| for reference to understand the functionality of
+Class prototypes defined in \verb|UnorderedPQ.h| and \verb|OrderedPQ.h| are provided. Both of these classes are subclasses
+of the pure virtual \verb|PriorityQueue| class. You \textbf{must} review \verb|PriorityQueue.h| for reference to understand the functionality of
 each method. 
 \\[2mm]
-Phase 1 of the project will consist of the following files. You must use exactly these filenames.
+Phase 2 of the project will consist of the following files \emph{in addition to phase 1 files}. You must use exactly these filenames.
 \\
 
 \renewcommand{\arraystretch}{1.5}
 \hspace{1cm}\begin{tabular}{@{} ll @{}}
-    \verb|AbstractList.h| & The ADT interface (provided). \\
-    \verb|OrderedArrayList.h| & The ordered array definition (provided). \\
-    \verb|UnorderedArrayList.h| & The unordered array definition (provided). \\
-    \verb|OrderedArrayList.cpp| & The ordered array implementation. \\
-    \verb|UnorderedArrayList.cpp| & The unordered array implementation. \\
+    \verb|PriorityQueue.h| & The PQ ADT interface. (provided)\\
+    \verb|OrderedPQ.h| & The ordered PQ definition. (provided)\\
+    \verb|UnorderedPQ.h| & The unordered PQ definition. (provided)\\
+    \verb|OrderedPQ.cpp| & The ordered array implementation. \\
+    \verb|UnorderedPQ.cpp| & The unordered array implementation.\\
 \end{tabular}
 \\[4mm]
-Your task is to write your own code for the public functions found in \verb|UnorderedArrayList.h| and \verb|OrderedArrayList.h|. You may not
-modify \verb|AbstractList.h|.
-\\[2mm]
-Testing your code is essential and may require more time than writing the classes. Be sure to test combinations of functions.
+Your task is to write your own code for the public functions found in \verb|OrderedPQ.h| and \verb|UnorderedPQ.h|. You may not
+modify \verb|PriorityQueue.h|.
+\\[4mm]
+Finally, this phase marks the culmination of the coding aspect of the project. Ensure that your code is thoroughly commented,
+well-formatted according to C++ standards, and adheres to best practices such as meaningful variable names and using camelCase.
 \newpage\noindent
 \mysection{Additional Details}
 \begin{itemize}
@@ -148,8 +149,17 @@ Testing your code is essential and may require more time than writing the classe
     \item Allow sufficient time for testing on Gradescope.
 \end{itemize}
 
-\mysection{Turning in Phase 1}
-To submit phase 1, you must upload the following C++ files to your \verb|Gradescope| account through Canvas. The automated grading platform will run.
+\mysection{Hints}
+\begin{itemize}
+    \item The implementation for \verb|UnorderedPQ| and \verb|OrderedPQ| should be done by calling methods from the phase 1 ArrayList classes you implemented.
+    If you are rewriting the same/similar code from phase 1 then you're on the wrong track. Focus on how to use phase 1 objects to implement phase 2 functions
+    with very little new code.
+    \item If you are getting unexpected output, use \verb|gdb| and step through your program. Failure to learn how to use debugging tools will result in many
+    wasted hours.
+\end{itemize}
+
+\mysection{Turning in Phase 2}
+To submit phase 2, you must upload the following C++ files to your \verb|Gradescope| account through Canvas. The automated grading platform will run.
 You're permitted unlimited submissions, but \emph{don't} use Gradescope as your testing platform. If we see this happening, we will enforce limited submissions.
 \\
 
@@ -159,6 +169,10 @@ You're permitted unlimited submissions, but \emph{don't} use Gradescope as your 
     \verb|UnorderedArrayList.h|\\
     \verb|OrderedArrayList.cpp|\\
     \verb|UnorderedArrayList.cpp|\\
+    \verb|OrderedPQ.h|\\
+    \verb|UnorderedPQ.h|\\
+    \verb|OrderedPQ.cpp|\\
+    \verb|UnorderedPQ.cpp|\\
 \end{tabular}
 
 \mysection{Cheating Policy}
