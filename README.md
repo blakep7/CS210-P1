@@ -4,9 +4,12 @@ Welcome to the Program 1 Assignment Repository! This repository contains all the
 
 ## How to Use
 
-Clone the repository and work from the clone. ([Helpful guide](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository))
+1. Clone the repository ([Helpful guide](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)) or download the files directly from the repository ([Helpful guide](https://zapier.com/blog/how-to-download-from-github/))
 
-Alternatively, you can download the files directly from the repository.
+2. Put/edit files in your chosen IDE.
+
+3. Submit files to Gradescope once complete.
+
 
 ## Phases
 
