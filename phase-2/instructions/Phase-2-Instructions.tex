@@ -59,7 +59,24 @@
     frame=tb
 }
 
-
+% Second style
+\lstdefinestyle{cstyle2}{
+    language=C,
+    basicstyle=\small\ttfamily,
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!60!black},
+    stringstyle=\color{red},
+    numbers=left,
+    numberstyle=\tiny,
+    numbersep=5pt,
+    breaklines=true,
+    breakatwhitespace=true,
+    tabsize=4,
+    frame=single,
+    captionpos=b,
+    showstringspaces=false,
+    escapeinside={(*@}{@*)},
+}
 
 % Cover Page
 \begin{document}
@@ -175,10 +192,92 @@ You're permitted unlimited submissions, but \emph{don't} use Gradescope as your 
     \verb|UnorderedPQ.cpp|\\
 \end{tabular}
 
+\newpage\noindent
+\mysection{Code Format and Comments}
+\begin{itemize}
+    \item Proper indentation:
+    \begin{itemize}
+        \item Consistent use of spaces or tabs for indentation (typically 2 or 4 spaces).
+        \item Nested code blocks should be indented accordingly.
+    \end{itemize}
+    
+    \item Consistent use of braces:
+    \begin{itemize}
+        \item Braces should be used consistently for code blocks, including if statements, loops, and functions.
+    \end{itemize}
+    
+    \item Descriptive variable and function names:
+    \begin{itemize}
+        \item Variable and function names should be meaningful and descriptive of their purpose.
+        \item Use of camelCase for naming.
+    \end{itemize}
+    
+    \item Consistent naming conventions:
+    \begin{itemize}
+        \item Follow consistent naming conventions for variables, functions, classes, and other identifiers.
+    \end{itemize}
+    
+    \item Proper spacing:
+    \begin{itemize}
+        \item Use spaces around operators for readability.
+        \item Use consistent spacing within expressions and statements.
+    \end{itemize}
+    
+    \item Use of appropriate data types:
+    \begin{itemize}
+        \item Choose appropriate data types for variables and functions based on their usage and requirements. (We are not concerned about memory usage,
+        so do not worry too much about this one.)
+    \end{itemize}
+    
+    \item Avoidance of magic numbers and hardcoded values:
+    \begin{itemize}
+        \item Use named constants instead of hardcoded values.
+        \item Magic numbers should be avoided or properly explained with comments.
+    \end{itemize}
+    
+    \item Proper use of comments:
+    \begin{itemize}
+        \item Every file should have a header comment with your name and RedID. (Look at example provided in the appendix.)
+        \item Every function should have a leading comment. (Look at example provided in the appendix.)
+        \item Include comments to explain complex logic, algorithms, or non-trivial code blocks.
+        \item Comments should be clear and concise, adding value to the code understanding.
+    \end{itemize}
+\end{itemize}
+
 \mysection{Cheating Policy}
 There is a zero tolerance policy on cheating in this course. You are expected to complete all programming assignments on your own.
 Collaboration with other students in the course is not permitted. You may discuss ideas or solutions in general terms with other students,
 but you must not exchange code. During the grading process I will examine your code carefully. Anyone caught cheating on a programming
 assignment (or on an exam) will receive an "F" in the course, and a referral to Judicial Procedures.
+
+\mysection{Appendix}
+\begin{lstlisting}[style=cstyle2, caption=Example Header Comment]
+/**
+* @file sample.cpp
+* @author <Your Name> <Your RedID>
+* @brief This is a sample program to show how to comment
+* @date YYYY-MM-DD
+*/
+#include <stdio.h>
+
+int main() {
+    printf("Hello, world!");
+    return 0;
+}
+\end{lstlisting}
+    
+\begin{lstlisting}[style=cstyle2, caption=Example Function Comment]
+/**
+* Returns the Object at the specified position in this list
+* @param index
+* @return Object
+* @throws invalid_argument if index out of range
+*/
+int get(int index) {
+    function definition...
+}
+\end{lstlisting}
+        
+
 
 \end{document}
