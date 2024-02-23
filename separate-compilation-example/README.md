@@ -34,3 +34,8 @@ g++ -Wall Sphere.cpp Cube.cpp Cone.cpp tester.cpp -o tester.exe
 ```bash
 make
 ```
+
+## After you have your '.exe' file, you can run the program using the following command
+```bash
+./tester.exe
+```
