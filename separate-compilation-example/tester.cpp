@@ -13,13 +13,17 @@
 #include "Cone.h"
 
 int main(void) {
-    Cube cube(3);
-    Sphere sphere(3);
-    Cone cone(3, 4);
+    Cube *cube = new Cube(3);
+    Sphere *sphere = new Sphere(3);
+    Cone *cone = new Cone(3, 4);
+    
+    std::cout << "Cube volume: Expected: 27 Result: " << cube->volume() << std::endl;
+    std::cout << "Sphere volume: Expected: ~113.1 Result: " << sphere->volume() << std::endl;
+    std::cout << "Cone volume: Expected ~37.7 Result: " << cone->volume() << std::endl;
 
-    std::cout << "Cube volume: Expected: 27 Result: " << cube.volume() << std::endl;
-    std::cout << "Sphere volume: Expected: ~113.1 Result: " << sphere.volume() << std::endl;
-    std::cout << "Cone volume: Expected ~37.7 Result: " << cone.volume() << std::endl;
+    delete cube;
+    delete sphere;
+    delete cone;
 
     return 0;
 }
