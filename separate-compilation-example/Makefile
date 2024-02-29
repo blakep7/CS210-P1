@@ -3,14 +3,14 @@ CC=g++
 CFLAGS=-g -Wall
 
 # Build targets in the follow form
-# targetName: pre-requisites
+# targetName: prerequisites
 #	shell/terminal command to run
 
-# Specify the 'make all' or simply 'make' target to run the driver and clean targets
+# Specify the 'make all' or simply 'make' target to run the tester and clean targets
 all: tester clean
 
-# driver target is ran first, its pre-requisites are driver.o and Sphere.o, so it first
-# calls the driver.o target, then the sphere.o target etc.
+# tester target is ran first, its pre-requisites are Cone.o Sphere.o Cube.o Tester.o, so it first
+# calls the Cone.o target, then the Cube.o target etc.
 tester: Cone.o Cube.o Sphere.o tester.o
 	$(CC) $(CFLAGS) Cone.o Cube.o Sphere.o tester.o -o tester.exe
 tester.o: tester.cpp 
