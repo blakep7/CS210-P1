@@ -10,50 +10,90 @@
     Ranking of objects by priority is determined by natural order.
     For this implementation, the lowest number has the highest priority.
     All objects inserted into the PQ must implement this interface.
-*/   
+*/  
 
 class PriorityQueue
 {
 protected:  
-	const int DEFAULT_MAX_CAPACITY = 1000;
+	const int DEFAULT_INITIAL_CAPACITY = 1000;
 
 public:
-    //  Inserts a new object into the priority queue.  Returns true if
-    //  the insertion is successful.  If the PQ is full, the insertion
-    //  is aborted, and the method returns false.
+
+    /**
+     * @brief Inserts a new object into the priority queue
+     * 
+     * @param object 
+     * @return true If the insertion is successful
+     * @return false If the insertion is not successful (PQ is full)
+     * 
+     * @note Our priority queue can never be full as we are using a list-based implementation, this method should never return false
+     */
     virtual bool insert(int object) = 0;   
    
-    //  Removes the object of highest priority that has been in the
-    //  PQ the longest, and returns it.  
-    //  Throws invalid_argument if the PQ is empty.
-    //         exception error message: "Cannot remove from empty queue" 
+    /**
+     * @brief Removes the highest priority object that has been in the PQ the longest
+     * 
+     * @return int The object that was removed.
+     * 
+     * @throws std::invalid_argument Cannot remove from empty queue
+     */
     virtual int remove() = 0;
     
-    //  Deletes all instances of the parameter obj from the PQ if found, and
-    //  returns true.  Returns false if no match to the parameter obj is found.
+    /**
+     * @brief Deletes all instances of the parameter obj from the PQ if found
+     * 
+     * @param obj 
+     * @return true If one or more instances of the parameter obj were found and deleted
+     * @return false If no match to the parameter obj is found
+     */
     virtual bool deleteAll(int obj) = 0;
    
-    //  Returns the object of highest priority that has been in the
-    //  PQ the longest, but does NOT remove it. 
-    //  Throws invalid_argument if the PQ is empty.
-    //         exception error message: "Cannot peek from empty queue" 
+    /**
+     * @brief Returns the object of highest priority that has been in the PQ the longest, but does NOT remove it
+     * 
+     * @return int 
+     * 
+     * @throws std::invalid_argument Cannot peek from empty queue
+     */
     virtual int peek() = 0;   
     
-    //  Returns true if the priority queue contains the specified element
-    //  false otherwise.
+    /**
+     * @brief Checks if the priority queue contains the specified element
+     * 
+     * @param obj 
+     * @return true If the priority queue contains the specified element
+     * @return false If the priority queue does not contain the specified element
+     */
     virtual bool contains(int obj) = 0; 
    
-    //  Returns the number of objects currently in the PQ.
+    /**
+     * @brief Returns the number of objects currently in the PQ
+     * 
+     * @return int 
+     */
     virtual int size() = 0;
-      
-    //  Returns the PQ to an empty state.
+
+    /**
+     * @brief Clears the priority queue
+     */
     virtual void clear() = 0;
    
-    //  Returns true if the PQ is empty, otherwise false
+    /**
+     * @brief Checks if the priority queue is empty
+     * 
+     * @return true If the priority queue is empty
+     * @return false If the priority queue is not empty
+     */
     virtual bool isEmpty() = 0;
    
-    //  Returns true if the PQ is full, otherwise false.  List based
-    //  implementations should always return false.
+    /**
+     * @brief Checks if the priority queue is full
+     * 
+     * @return true If the priority queue is full
+     * @return false If the priority queue is not full
+     * 
+     * @note Our PQ can never be full as we are using a list-based implementation, always returns false
+     */
     virtual bool isFull() = 0;  
     
 };
