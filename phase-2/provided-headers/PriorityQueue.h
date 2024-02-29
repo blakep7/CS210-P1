@@ -35,7 +35,7 @@ public:
      * 
      * @return int The object that was removed.
      * 
-     * @throws std::invalid_argument Cannot remove from empty queue
+     * @throws std::invalid_argument Message: "Cannot remove from empty queue"
      */
     virtual int remove() = 0;
     
@@ -53,7 +53,7 @@ public:
      * 
      * @return int 
      * 
-     * @throws std::invalid_argument Cannot peek from empty queue
+     * @throws std::invalid_argument Message: "Cannot peek from empty queue"
      */
     virtual int peek() = 0;   
     
